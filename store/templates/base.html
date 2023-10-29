@@ -1,0 +1,104 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>MI ENTRETENCIÓN</title>
+    <link rel="stylesheet" href="{% static '/CSS/estilo.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+</head>
+<body>
+  <nav class="navbar fixed-top bg-transparent">
+    <div class="container-fluid">
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><--BUSCAR POR
+          CATEGORÍA</button>
+          <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">CATEGORÍAS</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"></li>
+                <a href="{% url 'principal' %}" class="boton-enlace">INICIO</a>
+                <li class="list-group-item"></li>
+                <a href="{% url 'terror' %}" class="boton-enlace">TERROR</a>
+                <li class="list-group-item"></li>
+                <a href="{% url 'supervivencia' %}" class="boton-enlace">SUPERVIVENCIA</a>
+                <li class="list-group-item"></li>
+                <a href="{% url 'carreras' %}" class="boton-enlace">CARRERAS</a>
+                <li class="list-group-item"></li>
+                <a href="{% url 'accion' %}" class="boton-enlace">ACCIÓN</a>
+                <li class="list-group-item"></li>
+                <a href="{% url 'aventura' %}" class="boton-enlace">AVENTURA</a>
+                
+                <li class="list-group-item"></li>
+                <a href="{% url 'listado_juegos' %}" class="boton-enlace">LISTA DE JUEGOS</a>
+                {% if perfil == 'admin' %}
+                <li class="list-group-item"></li>
+                <a href="{% url 'listado_usuarios' %}" class="boton-enlace">LISTA DE USUARIOS</a>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+          {% block inicio_sesion %}
+          {% endblock %}
+          {% if request.user.is_authenticated %}
+          <div class="d-flex justify-content-between">
+            <p>
+              <span style="margin-right: 10px;">Bienvenido, {{ request.user.username }}
+              (<a href="{% url 'logout' %}">Cerrar Sesión</a>)
+          
+            </p>
+            <br>
+            
+          <p>
+              <a href="{% url 'ver_carrito' %}">
+                  <i class="fas fa-shopping-cart"></i> Ver Carrito
+              </a>
+          </p>
+        
+          </div>
+          {% else %}
+          <p>
+            <a href="{% url 'index' %}">Iniciar Sesión</a>
+          </p>
+          {% endif %}
+      </div>
+    </nav>
+  <header>
+    <div class="header">
+      <br>
+      <br>
+
+      <img src="{% static '/imagenes/header.png' %}" alt="Inicio">
+    </div>
+  </header>
+{% block  contenido %}
+{% endblock  %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+crossorigin="anonymous"></script>
+
+{% block js %}
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}
+</body>
+</html>
