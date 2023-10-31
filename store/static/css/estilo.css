@@ -1,9 +1,6 @@
 body {
-    background-image:url('../imagenes/Fondo.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color:white;
+  padding: 0;
+  margin: 0;
     
 }
 
@@ -51,43 +48,6 @@ body {
     display: table;
   }
 
-  p{
-    color: white;
-    font-family: 'Segoe UI';
-    font-size: smaller;
-    text-align: justify;
-  }
-
-  h1{
-    color: white;
-    text-align: center;
-    font-family: 'Segoe UI';
-    border: 4px;
-
-  }
-
-  h2{
-    color: white;
-    text-align: center;
-    font-family: 'Segoe UI';
-    border: 4px;
-    
-  }
-
-  h3{
-    color: white;
-    text-align: center;
-    font-family: 'Segoe UI';
-    border: 2px;
-  }
-
-  h4{
-    color: white;
-    font-family: 'Segoe UI';
-    border: 2px;
-    text-align:left;
-  }
-
 
   header {
     text-align: center;
@@ -104,59 +64,6 @@ body {
     color: white;
     font-family: 'Segoe UI';
 
-  }
-
-  .boton-enlace {
-    padding: 10px;
-    background-color: #250031;
-    color: white;
-    text-decoration: none;
-    text-align: right;
-    border: none;
-    border-radius: 6%;
-    cursor: pointer;
-    font-family: 'Segoe UI';
-    font-weight: bold;
-    font-size: 100%;
-    
-    
-  }
-  .boton-enlace:hover {
-    background-color: #14002b;
-  }
-
-  .boton2{
-    background-color:  #250031;
-    border: 10px;;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    font-family: 'Segoe UI';
-    font-weight: bold;
-    border-radius: 10%;
-    cursor: pointer;
-    width: 40%;
-    margin: 3%;
-
-  }
-  .boton2:hover{
-    background-color: #14002b;
-  }
-  .button {
-    background-color:  #250031;
-    border:none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 30px;
-  }
-  .boton:hover {
-    background-color: #14002b;
   }
 
   .card {
@@ -183,20 +90,6 @@ body {
     font-family: 'Segoe UI';
   }
 
-  .btn-primary {
-    background-color: #250031;
-    color: white;
-    border-color: #250031;
-    font-family: 'Segoe UI';
-    font-weight: bold;
-    font-size: 100%;
-  }
-
-  .btn-primary:hover {
-    background-color: #14002b;
-    border-color: #14002b;
-  }
-
   .list-group-item {
     background-color: #14002b;
   }
@@ -209,3 +102,101 @@ body {
     height: 80%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+
+.barra{
+  display: flex;
+  width: 100%;
+  height: 70px !important;
+  background: #E67914 !important;
+}
+
+.titulo-iniciar-sesion{
+  color: #E67914 !important;
+  font-size: 28px;
+  font-weight: 250;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-box2{
+  display: flex;
+  color: white !important;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.info{
+  color: white !important;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.info-footer{
+  color: black !important;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.custom-button {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+.contenedor-login{
+  padding-top: 60px;
+}
+
+.link-recuperar{
+  text-decoration: none;
+}
+
+.box1 {
+  background-color: #D9D9D9; /* Color del fondo del formulario */
+  padding: 100px 100px 100px 100px;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.box2 {
+  opacity: .7;
+  background-color: #E67914 !important; /* Color del fondo del formulario */
+  padding: 20px;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.btn-bordered{
+  border: 2px solid #007bff;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+
+.custom-input {
+  caret-color: #1473E6; /* Cambia el color de la barra, puedes ajustarlo según tu preferencia */
+  text-indent: 20px; /* Ajusta la posición de la barra a la derecha */
+}
+
+.custom-rounded{
+  border-radius: 40px;
+}
+
+
+
+
+
+
+
+

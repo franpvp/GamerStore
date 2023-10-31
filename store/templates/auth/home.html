@@ -15,7 +15,42 @@
 </head>
 <body>
   <div class="row barra">
-      <nav class="navbar">
+    <div class="col">
+      <nav class="navbar fixed-top">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><--BUSCAR POR
+            CATEGORÍA
+        </button>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">CATEGORÍAS</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"></li>
+                <a href="{% url 'principal' %}" class="boton-enlace">INICIO</a>
+                <li class="list-group-item"></li>
+                <a href="{% url 'terror' %}" class="boton-enlace">TERROR</a>
+                <li class="list-group-item"></li>
+                <a href="{% url 'supervivencia' %}" class="boton-enlace">SUPERVIVENCIA</a>
+                <li class="list-group-item"></li>
+                <a href="{% url 'carreras' %}" class="boton-enlace">CARRERAS</a>
+                <li class="list-group-item"></li>
+                <a href="{% url 'accion' %}" class="boton-enlace">ACCIÓN</a>
+                <li class="list-group-item"></li>
+                <a href="{% url 'aventura' %}" class="boton-enlace">AVENTURA</a>
+                
+                <li class="list-group-item"></li>
+                <a href="{% url 'listado_juegos' %}" class="boton-enlace">LISTA DE JUEGOS</a>
+                {% if perfil == 'admin' %}
+                <li class="list-group-item"></li>
+                <a href="{% url 'listado_usuarios' %}" class="boton-enlace">LISTA DE USUARIOS</a>
+                {% endif %}
+            </ul>
+            </div>
+        </div>
             <div class="d-flex justify-content-center"> <!-- Centrar los botones -->
               <a class="custom-button" href="{% url 'index' %}">Inicio</a>
               <a class="custom-button" href="#">Categorías</a>
@@ -40,12 +75,13 @@
             </div>
             {% else %}
             <p>
-              <a class="custom-button" href="{% url 'inicio_sesion' %}">
+              <a class="custom-button" href="{% url 'index' %}">
                 <i class="fa fa-user"></i> Acceder
               </a>
             </p>
             {% endif %}
       </nav>
+    </div>
   </div>
   
   

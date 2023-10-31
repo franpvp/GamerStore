@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, registro, eliminar_usuario, editar_datos, principal, listado_usuarios, terror, accion, aventura, carreras, supervivencia, ver_carrito, pago, eliminar_del_carrito, agregar_al_carrito, listado_juegos, crear_juego, juegos_show, eliminar_juego, juegos_editar, logout_view, recuperar_contrasenna
+from .views import home, login ,index, registro, eliminar_usuario, editar_datos, principal, listado_usuarios, terror, accion, aventura, carreras, supervivencia, ver_carrito, pago, eliminar_del_carrito, agregar_al_carrito, listado_juegos, crear_juego, juegos_show, eliminar_juego, juegos_editar, logout_view, recuperar_contrasenna
 urlpatterns = [
     # link Juegos
     path('princjuegos/principal', principal, name='principal'),
@@ -20,6 +20,8 @@ urlpatterns = [
     
 
     # link enlace formularios usuario
+    path('inicio_sesion/', login, name="inicio_sesion"),
+    path('home/', home, name="home"),
     path('registro/', registro, name="registro"),
     path('eliminar_usuario/<int:id>/', eliminar_usuario, name="eliminar_usuario"),
     path('editar_datos/<int:id>/', editar_datos, name="editar_datos"),

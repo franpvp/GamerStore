@@ -3,56 +3,60 @@
 {% block css %}
 {% endblock %}
 
-
 {% block contenido %}
-<h1>Iniciar Sesion</h1>
-<br>
-<br>
-<br>
-<div class = "container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <form action="" method="POST">
-                {% csrf_token %}
-                
-                {% if error %}
-                    <small class="text-danger" id="usuario-error">{{ error }}</small>
-                {% endif %}
-                
-                <div class="col-12 mb-3">
-                    <label for="" class="form-label"> Nombre de Usuario </label>
-                    <input type="text" class="form-control" name="usuario" id="usuario"
-                    placeholder="Ingrese Nombre de Usuario">
-                    <small class="text-danger" id="NombreUsuario-error"> </small>
+    <div class="container">
+        <div class="row justify-content-center contenedor-login">
+            <div class="col"></div>
+            <div class="box1 col-6">
+                <h1 class="titulo-iniciar-sesion text-center pb-4">Iniciar Sesion</h1>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {% if error %}
+                        <small class="text-danger" id="usuario-error">{{ error }}</small>
+                    {% endif %}
+                    <div class="col-12 form-floating mb-3">
+                        <input type="text" class="form-control custom-rounded custom-input" name="usuario" id="usuario"
+                        placeholder="Ingrese Nombre de Usuario">
+                        <label for="" class="form-label ms-3"> Nombre de Usuario </label>
+                        <small class="text-danger" id="NombreUsuario-error"></small>
+                    </div>
+                    <div class="col-12 form-floating">
+                        <input type="password" class="form-control custom-rounded custom-input" name="pass" id="pass"
+                        placeholder="Ingrese Contraseña">
+                        <label for="" class="form-label ms-3"> Ingrese Contraseña </label>
+                        <small class="text-danger" id="pass-error"> </small>
 
-                </div>
-                <div class="col-12 mb-3">
-                    <label for="" class="form-label"> Ingrese Contraseña </label>
-                    <input type="password" class="form-control" name="pass" id="pass"
-                    placeholder="longitud entre 6 y 18 caracteres">
-                    <small class="text-danger" id="pass-error"> </small>
-
-                </div>
-                <div class="d-grid" class="mb-3">
-                    <div class="container">
+                    </div>
+                    <div class="text-end">
+                        <a class="link-recuperar" href="{% url 'recuperar_contrasenna' %}">Recuperar contraseña</a>
+                    </div>
+                    <div class="d-grid" class="mb-3">
                         <div class="row justify-content-center">
-                            <br>
-                            <button type="submit" class="boton2">Iniciar Sesion</button>
-                            <button type="reset" class="boton2">Limpiar</button>
-                            <br>
-                            <br>
-                            <a href="{% url 'recuperar_contrasenna' %}" class="boton2" style="width: 450px">Recuperar
-                            contraseña</a>
+                            <div class="col-12 text-center">
+                                <button type="button" class="btn btn-primary btn-bordered" 
+                                    style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: 3rem; --bs-btn-font-size: .95rem;">
+                                    Ingresar
+                                </button>
+                            </div>
                         </div>
                     </div>
+                </form>
+            </div>
+            <div class="box2 col-5 d-flex">
+                <div class="my-auto">
+                    <h2 class="titulo-box2 text-center">Bienvenido</h2>
+                <p class="info text-center">¡Gracias por visitar nuestro sitio! Inicia sesión para acceder a tu cuenta.</p>
                 </div>
-            </form>
-
+            </div>
+            <div class="col"></div>
         </div>
+
     </div>
-    <footer>
-        <h5> @Copyright Lhia Cadiz /Juan Miranda </h5>
-    </footer>
+        
+
+<footer>
+    <h5 class="info-footer text-center"></h5>
+</footer>
 {% endblock %}
 
 

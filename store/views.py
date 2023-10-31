@@ -10,6 +10,9 @@ from django.urls import reverse
 
 # definicion sesion de usuarios y perfil
 def index(request):
+    return render(request, 'auth/index.html')
+
+def login(request):
     if request.method == 'POST':
         usuario = request.POST.get('usuario')
         clave = request.POST.get('pass')
@@ -24,17 +27,19 @@ def index(request):
             except UserProfile.DoesNotExist:
                 # Si el perfil de usuario no existe, puedes manejarlo aquí
                 messages.error(request, 'El perfil de usuario no está configurado correctamente.')
-                return redirect('principal')
+                return redirect('index')
             
-            return redirect('listado_juegos')
+            return redirect('home')
         else:
             context = {
                 'error': 'Error, inténtelo nuevamente'
             }
-            return render(request, 'auth/index.html', context)
+            return render(request, 'auth/inicio_sesion.html', context)
+    return render(request, 'auth/inicio_sesion.html')
 
-    return render(request, 'auth/index.html')
-
+@login_required 
+def home(request):
+    return render(request, 'auth/home.html')
     
 @login_required
 def listado_usuarios(request):
